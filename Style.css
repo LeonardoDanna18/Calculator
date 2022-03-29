@@ -1,0 +1,33 @@
+.numKeys {
+    font-family: 'Hubballi', cursive;
+    width:100px;
+    height:25px;
+    margin-bottom: 10px;
+    border:5px groove gray;
+    background-color:gray;
+    color:white;
+}
+.numKeys:active {
+    font-family: 'Hubballi', cursive;
+    width:100px;
+    height:25px;
+    margin-bottom: 10px;
+    border:5px groove gray;
+    background-color:black;
+    color:white;
+}
+.container {
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-top: 20px;
+}
+.calc-box {
+    color:red;
+    font-size: 2.5em;
+    background-color: black;
+    padding:10px;
+    font-family: 'Hubballi', cursive;
+    direction: rtl;
+    border-radius:15px;
+    margin:20px;
+}
