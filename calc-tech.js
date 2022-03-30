@@ -47,6 +47,40 @@ function makeNumber(e) {
         number1=displayNumber;
         operator="*";
         displayNumber=displayNumber + " \u00d7 ";
+    }else if(e.target.id==="=" && operator!=-1) {
+        if(operator==="+") {
+            let item=displayNumber.indexOf("+");
+            let start= item+1;
+            number2=displayNumber.substring(start);
+            number1=Number(number1);
+            number2=Number(number2);
+            answer=number1+ number2;
+            displayNumber=answer;
+        }else if(operator==="-") {
+           let item=displayNumber.indexOf("-");
+            let start= item+1;
+            number2=displayNumber.substring(start);
+            number1=Number(number1);
+            number2=Number(number2);
+            answer=number1- number2;
+            displayNumber=answer; 
+        }else if(operator==="*") {
+            let item=displayNumber.indexOf("\u00d7");
+            let start= item+1;
+            number2=displayNumber.substring(start);
+            number1=Number(number1);
+            number2=Number(number2);
+            answer=number1* number2;
+            displayNumber=answer;
+        }else if(operator==="/") {
+            let item=displayNumber.indexOf("\u00f7");
+            let start= item+1;
+            number2=displayNumber.substring(start);
+            number1=Number(number1);
+            number2=Number(number2);
+            answer=number1/ number2;
+            displayNumber=answer;
+        }
     }
     calcBox.value= displayNumber;
 }
