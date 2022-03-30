@@ -24,7 +24,7 @@ document.getElementById("AC").addEventListener("click",clearNumber);
 
 function makeNumber(e) {
     if(e.target.id>="0" && e.target.id<="9") {
-        if(displayNumber===0) {
+        if(displayNumber==0) {
             displayNumber=e.target.id;
         }else{
            displayNumber= displayNumber+e.target.id; 
@@ -39,6 +39,15 @@ function makeNumber(e) {
         number1=displayNumber;
         operator="/";
         displayNumber=displayNumber + " \u00f7 ";
+    }else if(e.target.id==="-" && operator===-1) {
+        number1=displayNumber;
+        operator="-";
+        displayNumber=displayNumber + " - ";
+    }else if(e.target.id==="*" && operator===-1) {
+        number1=displayNumber;
+        operator="*";
+        displayNumber=displayNumber + " \u00d7 ";
+    }
     calcBox.value= displayNumber;
 }
 function clearNumber(e) {

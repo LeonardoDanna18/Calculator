@@ -27,7 +27,7 @@
     background-color: black;
     padding:10px;
     font-family: 'Hubballi', cursive;
-    direction: rtl;
+    text-align: right;
     border-radius:15px;
     margin:20px;
 }
