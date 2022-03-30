@@ -5,6 +5,7 @@ let operator=-1;
 let answer=0;
 let displayNumber=0;
 
+document.getElementById("^").addEventListener("click",makeNumber);
 document.getElementById(".").addEventListener("click",makeNumber);
 document.getElementById("1").addEventListener("click",makeNumber);
 document.getElementById("2").addEventListener("click",makeNumber);
@@ -48,6 +49,17 @@ function makeNumber(e) {
         number1=displayNumber;
         operator="*";
         displayNumber=displayNumber + " \u00d7 ";
+    }else if(e.target.id==="^" && operator===-1) {
+        number1=displayNumber;
+        operator="^";
+        displayNumber=displayNumber + "^";
+    }else if(e.target.id==="Sqroot" && operator===-1) {
+         if(displayNumber==0) {
+            displayNumber=e.target.id;
+        }
+        number1=displayNumber;
+        operator="Sqroot";
+        displayNumber=displayNumber + "\u221a ";
     }else if(e.target.id==="=" && operator!=-1) {
         if(operator==="+") {
             let item=displayNumber.indexOf("+");
@@ -57,6 +69,7 @@ function makeNumber(e) {
             number2=Number(number2);
             answer=number1+ number2;
             displayNumber=answer;
+            operator=-1;
         }else if(operator==="-") {
            let item=displayNumber.indexOf("-");
             let start= item+1;
@@ -65,6 +78,7 @@ function makeNumber(e) {
             number2=Number(number2);
             answer=number1- number2;
             displayNumber=answer; 
+            operator=-1;
         }else if(operator==="*") {
             let item=displayNumber.indexOf("\u00d7");
             let start= item+1;
@@ -73,6 +87,7 @@ function makeNumber(e) {
             number2=Number(number2);
             answer=number1* number2;
             displayNumber=answer;
+            operator=-1;
         }else if(operator==="/") {
             let item=displayNumber.indexOf("\u00f7");
             let start= item+1;
@@ -81,6 +96,16 @@ function makeNumber(e) {
             number2=Number(number2);
             answer=number1/ number2;
             displayNumber=answer;
+            operator=-1;
+        }else if(operator==="^") {
+            let item=displayNumber.indexOf("^");
+            let start= item+1;
+            number2=displayNumber.substring(start);
+            number1=Number(number1);
+            number2=Number(number2);
+            answer=Math.pow(number1,number2);
+            displayNumber=answer;
+            operator=-1;
         }
     }else if(e.target.id===".") {
         if(displayNumber==0) {
