@@ -5,6 +5,7 @@ let operator=-1;
 let answer=0;
 let displayNumber=0;
 
+document.getElementById(".").addEventListener("click",makeNumber);
 document.getElementById("1").addEventListener("click",makeNumber);
 document.getElementById("2").addEventListener("click",makeNumber);
 document.getElementById("3").addEventListener("click",makeNumber);
@@ -80,6 +81,12 @@ function makeNumber(e) {
             number2=Number(number2);
             answer=number1/ number2;
             displayNumber=answer;
+        }
+    }else if(e.target.id===".") {
+        if(displayNumber==0) {
+            displayNumber=e.target.id;
+        }else{
+           displayNumber= displayNumber+e.target.id; 
         }
     }
     calcBox.value= displayNumber;
