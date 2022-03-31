@@ -53,13 +53,6 @@ function makeNumber(e) {
         number1=displayNumber;
         operator="^";
         displayNumber=displayNumber + "^";
-    }else if(e.target.id==="Sqroot" && operator===-1) {
-         if(displayNumber==0) {
-            displayNumber=e.target.id;
-        }
-        number1=displayNumber;
-        operator="Sqroot";
-        displayNumber=displayNumber + "\u221a ";
     }else if(e.target.id==="=" && operator!=-1) {
         if(operator==="+") {
             let item=displayNumber.indexOf("+");
